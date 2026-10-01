@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Главная</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header container">
+    <a href="index.html" class="header__logo">
+      <img src="images\Icon.png" alt="Positivus Logo" class="logo__img">
+      MedClinic
+    </a>
+    <nav class="nav">
+      <ul class="nav__list">
+        <li class="nav__item"><a href="index.html" class="nav__link nav__link_active">Главная</a></li>
+        <li class="nav__item"><a href="services.html" class="nav__link">Услуги</a></li>
+        <li class="nav__item"><a href="doctors.html" class="nav__link">Врачи</a></li>
+        <li class="nav__item"><a href="contacts.html" class="nav__link">Контакты</a></li>
+      </ul>
+      <div class="nav__auth">
+         <a href="#modal-login" class="nav__auth-btn">Вход</a>
+        <a href="#modal-register" class="button button_theme_outline">Регистрация</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="hero__content">
+        <h1 class="hero__title">Забота о вашем здоровье — наш приоритет</h1>
+        <p class="hero__text">Современная клиника с квалифицированными специалистами, передовым оборудованием и индивидуальным подходом к каждому пациенту.</p>
+        <a href="contacts.html" class="button button_theme_primary">Записаться на прием</a>
+      </div>
+      <div class="hero__image">
+        <img src="images/glavnaya.png" alt="Главное изображение" class="hero__img">
+      </div>
+    </section>
+
+    <section class="features">
+      <div class="section-title">
+        <h2 class="badge">Почему выбирают нас</h2>
+      </div>
+      <div class="doctors-grid">
+        <article class="doctor-card">
+          <h3>Квалифицированные врачи</h3>
+          <p>Врачи высшей категории с большим опытом.</p>
+        </article>
+        <article class="doctor-card">
+          <h3>Современное оборудование</h3>
+          <p>Высокоточная диагностика на аппаратах экспертного класса.</p>
+        </article>
+        <article class="doctor-card">
+          <h3>Комфортный сервис</h3>
+          <p>Прием по записи без очередей, и внимательный персонал.</p>
+        </article>
+      </div>
+    </section>
+
+
+    <section class="map-section container">
+        <div class="section-title">
+            <h2 class="badge">Как нас найти</h2>
+            <p>г. Москва, ул. Киевская, д. 1</p>
+        </div>
+
+        <div class="map-container">
+            <iframe 
+            src="https://yandex.ru/map-widget/v1/?ll=37.565882%2C55.743388&z=16&pt=37.565882%2C55.743388%2Cpm2gLm" 
+            width="100%" 
+            height="100%" 
+            allowfullscreen="true">
+            </iframe>
+        </div>
+    </section>
+
+  <footer class="footer container">
+    <div class="footer__inner">
+      <div class="footer__header">
+        <a href="index.html" class="footer__logo">
+          <img src="images\Icon2.png" alt="Positivus Logo" class="logo__img">
+          MedClinic
+        </a>
+        <nav class="footer__nav">
+          <ul class="footer__nav-list">
+            <li><a href="index.html" class="footer__nav-link">Главная</a></li>
+            <li><a href="services.html" class="footer__nav-link">Услуги</a></li>
+            <li><a href="doctors.html" class="footer__nav-link">Врачи</a></li>
+            <li><a href="contacts.html" class="footer__nav-link">Контакты</a></li>
+          </ul>
+        </nav>
+        <div class="footer__socials">
+          <a href="#" class="social-icon" aria-label="LinkedIn">in</a>
+          <a href="#" class="social-icon" aria-label="Facebook">f</a>
+          <a href="#" class="social-icon" aria-label="Twitter">x</a>
+        </div>
+      </div>
+
+      <div class="footer__body">
+        <div class="footer__contact-info">
+          <span class="footer__contact-badge">Контакты:</span>
+          <p>Email: info@MedClinic.com</p>
+          <p>Телефон: +7 (800) 111-11-11</p>
+          <p>Адрес: г. Москва, ул. Киевская, д. 1</p>
+        </div>
+
+        <form class="footer__subscribe-form" action="#" method="POST">
+          <input type="email" class="footer__subscribe-input" placeholder="Ваш Email" required>
+          <button type="submit" class="button button_theme_green">Подписаться</button>
+        </form>
+      </div>
+
+      <div class="footer__bottom">
+        <p>© 2026 MedClinic. Все права защищены.</p>
+        <a href="#" class="footer__privacy">Политика конфиденциальности</a>
+      </div>
+    </div>
+  </footer>
+
+   <!-- МОДАЛЬНОЕ ОКНО: ВХОД -->
+<div class="modal" id="modal-login">
+  <!-- Клик по затемнению закрывает окно -->
+  <a href="#" class="modal__overlay"></a>
+  <div class="modal__card">
+    <!-- Клик по крестику закрывает окно -->
+    <a href="#" class="modal__close">&times;</a>
+    <h2 class="modal__title">Вход в кабинет</h2>
+    
+    <form class="modal__form" action="#" method="POST">
+      <div class="form__group">
+        <label for="login-email" class="form__label">Email</label>
+        <input type="email" id="login-email" class="form__input" placeholder="example@mail.com" required>
+      </div>
+      <div class="form__group">
+        <label for="login-password" class="form__label">Пароль</label>
+        <input type="password" id="login-password" class="form__input" placeholder="••••••••" required>
+      </div>
+      <button type="submit" class="button button_theme_primary button_full">Войти</button>
+    </form>
+    
+    <p class="modal__footer-text">
+      Еще нет аккаунта? <a href="#modal-register">Зарегистрироваться</a>
+    </p>
+  </div>
+</div>
+
+<!-- МОДАЛЬНОЕ ОКНО: РЕГИСТРАЦИЯ -->
+<div class="modal" id="modal-register">
+  <a href="#" class="modal__overlay"></a>
+  <div class="modal__card">
+    <a href="#" class="modal__close">&times;</a>
+    <h2 class="modal__title">Регистрация</h2>
+    
+    <form class="modal__form" action="#" method="POST">
+      <div class="form__group">
+        <label for="reg-name" class="form__label">Имя и Фамилия</label>
+        <input type="text" id="reg-name" class="form__input" placeholder="Иван Иванов" required>
+      </div>
+      <div class="form__group">
+        <label for="reg-email" class="form__label">Email</label>
+        <input type="email" id="reg-email" class="form__input" placeholder="example@mail.com" required>
+      </div>
+      <div class="form__group">
+        <label for="reg-phone" class="form__label">Телефон</label>
+        <input type="tel" id="reg-phone" class="form__input" placeholder="+7 (999) 000-00-00" required>
+      </div>
+      <div class="form__group">
+        <label for="reg-password" class="form__label">Пароль</label>
+        <input type="password" id="reg-password" class="form__input" placeholder="••••••••" required>
+      </div>
+      <button type="submit" class="button button_theme_green button_full">Создать аккаунт</button>
+    </form>
+    
+    <p class="modal__footer-text">
+      Уже есть аккаунт? <a href="#modal-login">Войти</a>
+    </p>
+  </div>
+</div>
+
+</body>
+</html>
