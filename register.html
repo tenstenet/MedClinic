@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Вход — ПП-трекер</title>
+  <title>Регистрация — ПП-трекер</title>
   <link rel="icon" href="images/logo_1.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -22,27 +22,39 @@
   <main class="container">
     <section class="auth">
       <div class="auth__card">
-        <h1 class="auth__title">Вход в аккаунт</h1>
-        <p class="auth__subtitle">Рады видеть вас снова!</p>
+        <h1 class="auth__title">Создать аккаунт</h1>
+        <p class="auth__subtitle">Начните вести дневник питания прямо сейчас</p>
 
-        <form class="auth__form" id="login-form" novalidate>
+        <form class="auth__form" id="register-form" novalidate>
           <div class="form__group">
-            <label for="login-email" class="form__label">Email</label>
-            <input type="email" id="login-email" name="email" class="form__input" placeholder="example@mail.com" required>
-            <span class="form__error" data-error-for="login-email"></span>
+            <label for="reg-name" class="form__label">Имя и Фамилия</label>
+            <input type="text" id="reg-name" name="name" class="form__input" placeholder="Иван Иванов" required>
+            <span class="form__error" data-error-for="reg-name"></span>
           </div>
 
           <div class="form__group">
-            <label for="login-password" class="form__label">Пароль</label>
-            <input type="password" id="login-password" name="password" class="form__input" placeholder="••••••••" required>
-            <span class="form__error" data-error-for="login-password"></span>
+            <label for="reg-email" class="form__label">Email</label>
+            <input type="email" id="reg-email" name="email" class="form__input" placeholder="example@mail.com" required>
+            <span class="form__error" data-error-for="reg-email"></span>
           </div>
 
-          <button type="submit" class="button button_theme_green button_full">Войти</button>
+          <div class="form__group">
+            <label for="reg-password" class="form__label">Пароль</label>
+            <input type="password" id="reg-password" name="password" class="form__input" placeholder="Минимум 6 символов" required>
+            <span class="form__error" data-error-for="reg-password"></span>
+          </div>
+
+          <div class="form__group">
+            <label for="reg-password2" class="form__label">Повторите пароль</label>
+            <input type="password" id="reg-password2" name="password2" class="form__input" placeholder="••••••••" required>
+            <span class="form__error" data-error-for="reg-password2"></span>
+          </div>
+
+          <button type="submit" class="button button_theme_green button_full">Создать аккаунт</button>
         </form>
 
         <p class="auth__footer-text">
-          Ещё нет аккаунта? <a href="register.html">Зарегистрироваться</a>
+          Уже есть аккаунт? <a href="index.html">Войти</a>
         </p>
       </div>
     </section>
@@ -79,6 +91,6 @@
   </footer>
 
   <script src="js/api.js"></script>
-  <script src="js/login.js"></script>
+  <script src="js/register.js"></script>
 </body>
 </html>

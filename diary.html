@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Дневник — ПП-трекер</title>
+  <link rel="icon" href="images/logo_1.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header container">
+    <a href="diary.html" class="header__logo">
+      <img src="images/logo_1.png" alt="Логотип" class="logo__img">
+      ПП-трекер
+    </a>
+    <nav class="nav">
+      <ul class="nav__list">
+        <li class="nav__item"><a href="diary.html" class="nav__link nav__link_active">Дневник</a></li>
+        <li class="nav__item"><a href="profile.html" class="nav__link">Профиль</a></li>
+        <li class="nav__item"><a href="products.html" class="nav__link">Продукты</a></li>
+        <li class="nav__item"><a href="favorites.html" class="nav__link">Избранное</a></li>
+        <li class="nav__item"><a href="recipes.html" class="nav__link">Рецепты</a></li>
+        <li class="nav__item"><a href="wall.html" class="nav__link">Стена</a></li>
+      </ul>
+      <div class="nav__auth">
+        <button type="button" class="nav__auth-btn" onclick="logout()">Выйти</button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <!-- Панель даты -->
+    <section class="diary-date">
+      <button type="button" class="diary-date__arrow" id="prev-day" aria-label="Предыдущий день">←</button>
+      <div class="diary-date__current" id="current-date">…</div>
+      <button type="button" class="diary-date__arrow" id="next-day" aria-label="Следующий день">→</button>
+    </section>
+
+    <!-- Сводка за день -->
+    <section class="card diary-summary">
+      <h2 class="diary-summary__title">Съедено за день</h2>
+      <div class="diary-summary__calories">
+        <span id="total-calories">0</span> ккал
+      </div>
+      <div class="diary-summary__macros">
+        <span>Б: <b id="total-protein">0</b> г</span>
+        <span>Ж: <b id="total-fats">0</b> г</span>
+        <span>У: <b id="total-carbs">0</b> г</span>
+      </div>
+    </section>
+
+    <!-- Секция: Продукты -->
+    <section class="diary-section">
+      <div class="diary-section__head">
+        <h2 class="diary-section__title">Продукты</h2>
+        <button type="button" class="button button_theme_green diary-section__add" data-type="product">
+          + Продукт
+        </button>
+      </div>
+      <div id="products-list" class="diary-list"></div>
+    </section>
+
+    <!-- Секция: Рецепты -->
+    <section class="diary-section">
+      <div class="diary-section__head">
+        <h2 class="diary-section__title">Рецепты</h2>
+        <button type="button" class="button button_theme_green diary-section__add" data-type="recipe">
+          + Рецепт
+        </button>
+      </div>
+      <div id="recipes-list" class="diary-list"></div>
+    </section>
+
+  </main>
+
+  <footer class="footer container">
+    <div class="footer__inner">
+      <div class="footer__header">
+        <a href="diary.html" class="footer__logo">
+          <img src="images/logo_1.png" alt="Логотип" class="logo__img">
+          ПП-трекер
+        </a>
+        <ul class="footer__nav-list">
+          <li><a href="diary.html" class="footer__nav-link">Дневник</a></li>
+          <li><a href="products.html" class="footer__nav-link">Продукты</a></li>
+          <li><a href="recipes.html" class="footer__nav-link">Рецепты</a></li>
+          <li><a href="privacy.html" class="footer__nav-link">Политика</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__body">
+        <div class="footer__contact-info">
+          <span class="footer__contact-badge">Контакты:</span>
+          <p>Email: support@pp-tracker.ru</p>
+          <p>Телефон: +7 (800) 222-22-22</p>
+          <p>Адрес: г. Москва, ул. Киевская, д. 1</p>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>© 2026 ПП-трекер. Все права защищены.</p>
+        <a href="privacy.html" class="footer__privacy">Политика конфиденциальности</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/diary.js"></script>
+</body>
+</html>

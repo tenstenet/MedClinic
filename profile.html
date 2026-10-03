@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Профиль — ПП-трекер</title>
+  <link rel="icon" href="images/logo_1.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header container">
+    <a href="diary.html" class="header__logo">
+      <img src="images/logo_1.png" alt="Логотип" class="logo__img">
+      ПП-трекер
+    </a>
+    <nav class="nav">
+      <ul class="nav__list">
+        <li class="nav__item"><a href="diary.html" class="nav__link">Дневник</a></li>
+        <li class="nav__item"><a href="profile.html" class="nav__link nav__link_active">Профиль</a></li>
+        <li class="nav__item"><a href="products.html" class="nav__link">Продукты</a></li>
+        <li class="nav__item"><a href="favorites.html" class="nav__link">Избранное</a></li>
+        <li class="nav__item"><a href="recipes.html" class="nav__link">Рецепты</a></li>
+        <li class="nav__item"><a href="wall.html" class="nav__link">Стена</a></li>
+      </ul>
+      <div class="nav__auth">
+        <button type="button" class="nav__auth-btn" onclick="logout()">Выйти</button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <section class="page-header">
+      <h1>Профиль</h1>
+      <p>Твои данные и статистика</p>
+    </section>
+
+    <!-- Карточка пользователя -->
+    <section class="card profile-card">
+      <div class="profile-avatar" id="profile-avatar">?</div>
+      <h2 class="profile-name" id="profile-name">…</h2>
+      <p class="profile-email" id="profile-email">…</p>
+      <p class="profile-since" id="profile-since"></p>
+    </section>
+
+    <!-- Статистика -->
+    <section class="profile-stats">
+      <div class="card profile-stat">
+        <div class="profile-stat__value" id="stat-meals">0</div>
+        <div class="profile-stat__label">Записей в дневнике</div>
+      </div>
+      <div class="card profile-stat">
+        <div class="profile-stat__value" id="stat-favorites">0</div>
+        <div class="profile-stat__label">В избранном</div>
+      </div>
+      <div class="card profile-stat">
+        <div class="profile-stat__value" id="stat-days">0</div>
+        <div class="profile-stat__label">Дней с записями</div>
+      </div>
+    </section>
+
+    <!-- Форма редактирования имени -->
+    <section class="card profile-edit">
+      <h3 class="profile-edit__title">Изменить имя</h3>
+      <form id="profile-form" class="profile-edit__form">
+        <div class="form__group">
+          <label for="edit-name" class="form__label">Имя и Фамилия</label>
+          <input type="text" id="edit-name" class="form__input" placeholder="Иван Иванов" required>
+          <span class="form__error" data-error-for="edit-name"></span>
+        </div>
+        <button type="submit" class="button button_theme_green">Сохранить</button>
+      </form>
+    </section>
+
+    <!-- Выход -->
+    <section class="profile-logout">
+      <button type="button" class="button button_theme_outline" onclick="logout()">
+        Выйти из аккаунта
+      </button>
+    </section>
+
+    <!-- Toast -->
+    <div id="toast" class="toast"></div>
+
+  </main>
+
+  <footer class="footer container">
+    <div class="footer__inner">
+      <div class="footer__header">
+        <a href="diary.html" class="footer__logo">
+          <img src="images/logo_1.png" alt="Логотип" class="logo__img">
+          ПП-трекер
+        </a>
+        <ul class="footer__nav-list">
+          <li><a href="diary.html" class="footer__nav-link">Дневник</a></li>
+          <li><a href="products.html" class="footer__nav-link">Продукты</a></li>
+          <li><a href="recipes.html" class="footer__nav-link">Рецепты</a></li>
+          <li><a href="privacy.html" class="footer__nav-link">Политика</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__body">
+        <div class="footer__contact-info">
+          <span class="footer__contact-badge">Контакты:</span>
+          <p>Email: support@pp-tracker.ru</p>
+          <p>Телефон: +7 (800) 222-22-22</p>
+          <p>Адрес: г. Москва, ул. Киевская, д. 1</p>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>© 2026 ПП-трекер. Все права защищены.</p>
+        <a href="privacy.html" class="footer__privacy">Политика конфиденциальности</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/profile.js"></script>
+</body>
+</html>

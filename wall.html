@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Стена — ПП-трекер</title>
+  <link rel="icon" href="images/logo_1.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header class="header container">
+    <a href="diary.html" class="header__logo">
+      <img src="images/logo_1.png" alt="Логотип" class="logo__img">
+      ПП-трекер
+    </a>
+    <nav class="nav">
+      <ul class="nav__list">
+        <li class="nav__item"><a href="diary.html" class="nav__link">Дневник</a></li>
+        <li class="nav__item"><a href="profile.html" class="nav__link">Профиль</a></li>
+        <li class="nav__item"><a href="products.html" class="nav__link">Продукты</a></li>
+        <li class="nav__item"><a href="favorites.html" class="nav__link">Избранное</a></li>
+        <li class="nav__item"><a href="recipes.html" class="nav__link">Рецепты</a></li>
+        <li class="nav__item"><a href="wall.html" class="nav__link nav__link_active">Стена</a></li>
+      </ul>
+      <div class="nav__auth">
+        <button type="button" class="nav__auth-btn" onclick="logout()">Выйти</button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+
+    <section class="page-header">
+      <h1>Стена</h1>
+      <p>Делись успехами и поддерживай других</p>
+    </section>
+
+    <!-- Форма нового поста -->
+    <section class="card wall-form">
+      <div class="wall-form__avatar" id="new-post-avatar">?</div>
+      <form id="post-form" class="wall-form__inner">
+        <textarea id="post-text" class="form__textarea" placeholder="Что нового?" maxlength="500" required></textarea>
+        <div class="wall-form__actions">
+          <span class="wall-form__counter"><span id="post-counter">0</span> / 500</span>
+          <button type="submit" class="button button_theme_green">Опубликовать</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Лента постов -->
+    <div id="posts-feed" class="wall-feed"></div>
+
+    <div id="empty-feed" class="diary-empty" style="display:none;">
+      Пока ни одного поста. Будь первым!
+    </div>
+
+    <!-- Toast -->
+    <div id="toast" class="toast"></div>
+
+  </main>
+
+  <footer class="footer container">
+    <div class="footer__inner">
+      <div class="footer__header">
+        <a href="diary.html" class="footer__logo">
+          <img src="images/logo_1.png" alt="Логотип" class="logo__img">
+          ПП-трекер
+        </a>
+        <ul class="footer__nav-list">
+          <li><a href="diary.html" class="footer__nav-link">Дневник</a></li>
+          <li><a href="products.html" class="footer__nav-link">Продукты</a></li>
+          <li><a href="recipes.html" class="footer__nav-link">Рецепты</a></li>
+          <li><a href="privacy.html" class="footer__nav-link">Политика</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__body">
+        <div class="footer__contact-info">
+          <span class="footer__contact-badge">Контакты:</span>
+          <p>Email: support@pp-tracker.ru</p>
+          <p>Телефон: +7 (800) 222-22-22</p>
+          <p>Адрес: г. Москва, ул. Киевская, д. 1</p>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p>© 2026 ПП-трекер. Все права защищены.</p>
+        <a href="privacy.html" class="footer__privacy">Политика конфиденциальности</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/wall.js"></script>
+</body>
+</html>
